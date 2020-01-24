@@ -4,7 +4,9 @@
   --primary: #dae7ef;
   --queenblue: #346fa3;
   --darkgray: #315659;
+  --highlight: #539b95;
   --bootstrapdark: #212529;
+  --textMuted: #6c757d;
   --activeBold: 600;
 }
 
@@ -105,6 +107,10 @@ nav a:hover {
   font-weight: var(--activeBold);
 }
 
+.text-muted {
+  color: var(--queenblue) !important;
+}
+
 header,
 main {
   width: 90%;
@@ -112,6 +118,24 @@ main {
 
 main {
   margin: auto;
+}
+
+main section {
+  border-left: 2px solid var(--highlight);
+  padding-left: 20px;
+  margin-top: 2.5em;
+}
+main section:first-of-type {
+  margin-top: 1em;
+}
+
+main a {
+  color: var(--queenblue);
+  text-decoration: underline;
+}
+
+main a:hover {
+  font-weight: bolder;
 }
 
 header {
@@ -124,13 +148,16 @@ h1 {
 }
 
 h2 {
-  margin-top: 20px;
   font-size: 1.3em;
   color: var(--queenblue);
 }
 
 p {
   margin: 10px auto;
+}
+
+.objective {
+  color: var(--textMuted);
 }
 
 .add-margin {
