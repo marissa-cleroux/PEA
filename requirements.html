@@ -116,18 +116,176 @@
       </div>
     </nav>
 
-    <header><h1>Requirements</h1></header>
+    <header>
+      <h1>Requirements <span class="objective">{ Objective 5 }</span></h1>
+    </header>
     <main>
       <section>
-        <h2>Lorem Ipsum</h2>
+        <h2>Business Problem</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra
-          nisl nec dui gravida, sit amet hendrerit sem volutpat. Integer
-          ultricies massa et sem bibendum pharetra. Donec nec risus vel lorem
-          pulvinar commodo ut porta mauris. Suspendisse eu dapibus neque. Donec
-          commodo magna id ipsum eleifend, quis auctor mauris rutrum. Aliquam
-          ultricies non tellus et congue. Nulla ut tincidunt odio.
+          The Nursing Program has a series of skills that students are required
+          to practice in the lab setting and then in the clinical setting after
+          successfully practicing it in the lab setting. Before Nursing Skills
+          Tracker (NST), students had to track their skills via paper documents
+          throughout the course of the program. It was very difficult for
+          teachers to determine when students could practice a skill in a
+          clinical setting. Students also desired a way to generate a portfolio
+          of the skills they had acquired. Teachers also wanted a way for
+          students to keep track of when it’s time to practice a skill again so
+          that student can be autonomous. NST solved all this by allowing
+          students and teachers to input evaluations for skills and easily show
+          which skills students have practiced. The original elevator pitch for
+          NST can be found
+          <a href="./content/docs/NstElevatorPitch.pdf" target="_blank">here</a
+          >.
         </p>
+      </section>
+
+      <section>
+        <h2>Scope</h2>
+        <h3>Users & Other Systems</h3>
+        <p>NST has several categories of users:</p>
+        <ul>
+          <li>Nursing Department Coordinator</li>
+          <li>Nursing Teachers</li>
+          <li>
+            Nursing Clinical Teachers (teachers who supervise students in the
+            clinical setting)
+          </li>
+          <li>
+            Nursing Liaison Teachers (teachers who act as liaisons for students
+            in their preceptorship)
+          </li>
+          <li>Nursing Students</li>
+        </ul>
+        <p>NST depends on two other systems</p>
+        <ul>
+          <li>
+            Clara (an interface which stores all student, teacher, and program
+            data)
+          </li>
+          <li>
+            The Heritage College Application Management System (AMS) (manages
+            applications and authorization for Heritage College applications
+            deployed by the Computer Science program)
+          </li>
+        </ul>
+        <h3>Functionality</h3>
+        <h4>Coordinator Functionality</h4>
+        <ul>
+          <li>Add, remove, and update units</li>
+          <li>Add, remove, and update skills</li>
+          <li>View all students in the program</li>
+          <li>
+            Evaluate lab and clinical skills for all students in the program
+          </li>
+          <li>Assign students to clinical teachers</li>
+          <li>Assign students to liaison teachers</li>
+          <li>Generate portfolios for past and current students</li>
+          <li>
+            View summaries of skills learned by all students in the program
+          </li>
+        </ul>
+        <h4>Teacher, Liaison, and Clinical Teacher Functionality</h4>
+        <ul>
+          <li>View all students in their cohort</li>
+          <li>Evaluate lab and clinical skills for students in their cohort</li>
+          <li>View student’s self-evaluations for lab and clinical skills</li>
+          <li>
+            View previous evaluations for student’s lab and clinical skills
+          </li>
+          <li>View summaries of skills learned by student’s in their cohort</li>
+        </ul>
+        <h4>Student Functionality</h4>
+        <ul>
+          <li>Evaluate their own lab and clinical skills</li>
+          <li>View teacher’s evaluations for lab and clinical skills</li>
+          <li>View previous evaluations for lab and clinical skills</li>
+          <li>Generate portfolio of skills acquired</li>
+        </ul>
+        <figure>
+          <img
+            src="./content/images/contextDiagram.png"
+            alt="NST Context Diagram"
+          />
+          <figcaption>
+            NST Context Diagram, users, other systems and functionality
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Business Requirements</h2>
+        <p>
+          Business requirements are requirements for a system from the
+          perspective of the business. A functional requirement describes
+          something that the system must do. A non-functional requirement
+          describes how the system must be. All functional requirements are
+          captured by user stories, whereas non-functional requirements are
+          usually captured in the acceptance criteria of those user stories. An
+          example of a non-functional requirement in NST is to optimize the
+          GetAllSkills() method so that it is faster than 18 seconds.
+        </p>
+        <p>
+          Based on the initial presentation by the client the team summarized
+          the perceived requirements. We then discussed with the client if these
+          requirements covered what the she wanted and what her priorities were.
+          We also took the opportunity to clarify any confusing specifications
+          and refine the requirements. That meeting is summarized in these
+          <a
+            href="./content/docs/20191010_ApplicationMeetingMinutes.pdf"
+            target="_blank"
+            >meeting minutes</a
+          >. After gathering the initial requirements, we implemented some
+          functionality based on the client’s priorities and the time allocated
+          to complete the sprint. During the sprint review meeting, the client
+          provided feedback and had the final say on whether the requirements
+          were met or if more work was needed; the notes are found<a
+            href="./content/docs/20191119_NSTSprint1MeetingMinutes.pdf"
+            target="_blank"
+            >here</a
+          >
+          . The same process was then carried out for the second sprint, as
+          summarized
+          <a
+            href="./content/docs/20200204_NSTSprint2MeetingMinutes.pdf"
+            target="_blank"
+            >here</a
+          >.
+        </p>
+      </section>
+      <section>
+        <h2>Example Requirement</h2>
+        <p>
+          As an example, one
+          <a href="./content/docs/UserStoryCompleted.pdf" target="_blank"
+            >user story</a
+          >
+          that I was the main contributor for is: “As a student, I want to be
+          able to update when I have practiced a skill.” Before this
+          functionality was complete, a student was not able to add a new
+          evaluation to a skill once they had evaluated. The client wanted the
+          student to be able to use NST to track when they should practice a
+          skill again, and thus be able to update their evaluation every time
+          they practice it.
+        </p>
+        <figure>
+          <img
+            src="./content/images/ScreenUserStory.png"
+            alt="NST Context Diagram"
+          />
+          <figcaption>
+            Student has previously evaluated skill.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="./content/images/ScreenUserStory2.png"
+            alt="NST Context Diagram"
+          />
+          <figcaption>
+            Student has previously evaluated skill.
+          </figcaption>
+        </figure>
       </section>
     </main>
     <footer class="text-center">

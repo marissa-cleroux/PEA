@@ -114,60 +114,100 @@
       </div>
     </nav>
 
-    <header><h1>Analysis</h1></header>
+    <header>
+      <h1>Analysis <span class="objective">{ Objective 6 }</span></h1>
+    </header>
     <main>
       <section>
+        <h2>Technical Feasibility</h2>
+        <h3>Architecture Technical Analysis</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
-          tempus est a varius. Nulla in lectus eu dolor pharetra fringilla. Sed
-          scelerisque, ipsum nec mollis feugiat, velit sapien efficitur sapien,
-          et accumsan urna leo eget est. In hac habitasse platea dictumst.
-          Aenean vehicula, dui non mollis porttitor, neque ipsum semper nunc, a
-          pellentesque dolor est eu sem. Fusce erat urna, tempus nec dolor et,
-          fermentum convallis nunc. Nulla ullamcorper metus vitae nisi
-          pellentesque euismod. Integer nec malesuada orci. Maecenas placerat
-          libero orci, sit amet semper sapien tempor vel. Quisque consectetur
-          nunc a velit ultrices facilisis. Nullam cursus varius velit nec
-          semper. In hac habitasse platea dictumst. Aliquam volutpat egestas
-          neque dictum lobortis.
+          The Nursing Skills Tracker (NST) development team decided that we
+          would use ASP.NET Core along with prioritizing code first for our
+          database. We chose ASP.NET Core because we wanted to get experience
+          with the newer framework as well as using the new features that .NET
+          Core employs: better scalability and performance than .NET Framework.
+          Since we chose .NET Core, web forms were no longer an option, so we
+          settled with MVC. A disadvantage of .NET Core is that it is newer and
+          not battle tested in the Heritage College environment.
         </p>
         <p>
-          Donec sit amet massa nec velit luctus sollicitudin. Praesent sem ex,
-          pulvinar ut congue sit amet, finibus in lacus. Nullam a pellentesque
-          magna. Aenean sodales gravida aliquet. Maecenas rhoncus lobortis
-          ligula. Curabitur commodo, lorem quis aliquam laoreet, enim turpis
-          bibendum eros, ut accumsan libero purus eu diam. Quisque diam odio,
-          imperdiet at tristique id, volutpat in turpis. Ut convallis lacus
-          dapibus enim egestas ornare. Nulla ac lorem id magna fringilla
-          interdum non vitae odio. Nam tempor ex ut purus imperdiet, in finibus
-          nunc dapibus. Vivamus luctus elit id leo tempus maximus. Praesent sed
-          porttitor purus. Vestibulum porttitor eu tortor a efficitur. Proin ac
-          lacus fringilla, blandit tortor scelerisque, vestibulum diam. Cras
-          sagittis justo nec tortor lobortis vulputate. Aliquam turpis sem,
-          mollis nec nunc a, pulvinar congue elit.
+          For our in-house database we used code first as it simplifies the
+          creation of the application database and makes implementing changes
+          easy. A disadvantage with code first is that we get a lot of data from
+          Clara, a pre-existing database. We could not use code first to
+          generate the Clara models, so we had to manually implement the models
+          that hold data from Clara. For the presentation layer, NST used the
+          Heritage College Template as mandated by the College. We used
+          Bootstrap to ease mobile responsiveness. A downfall with Bootstrap is
+          it can be hard to debug. The front end used Razor pages, as it allowed
+          for easy creation of dynamic pages. The
+          <a
+            href="./content/docs/ArchitectureDesignAndProcessReport.pdf"
+            target="_blank"
+            >Architecture Design Report</a
+          >
+          covers the architectural choices extensively.
         </p>
         <p>
-          Cras congue risus molestie molestie placerat. In eleifend pellentesque
-          sollicitudin. Nulla at scelerisque felis, ut feugiat turpis. Curabitur
-          sapien libero, auctor ac gravida ac, ullamcorper ut justo. Proin
-          ultrices ac turpis eu gravida. Proin auctor euismod felis. Fusce felis
-          mi, euismod sed bibendum a, efficitur sed arcu. Maecenas tincidunt
-          nunc sed nibh pellentesque, id porttitor lectus gravida.
+          For automated testing we decided to focus on unit and integration
+          testing. The automated testing frameworks we chose were xUnit (the
+          syntax that allows running tests) and Moq (allows for the mocking of
+          data.
         </p>
+        <h3>Application Architecture</h3>
         <p>
-          Phasellus vel quam eget mauris mollis tristique et sed metus. Donec eu
-          sapien metus. Nullam semper mattis semper. Praesent vel sapien non dui
-          efficitur rutrum. Phasellus gravida nunc vel accumsan vestibulum.
-          Quisque interdum venenatis risus, id tempus metus laoreet id. Cras sit
-          amet vehicula lectus. Ut interdum neque eu odio vestibulum, sit amet
-          bibendum enim pretium.
+          There are three main tiers to NST: Database, Business, and
+          Presentation. Part of the database layer is housed within Heritage
+          College; however, the Clara database is external and housed by the
+          Ministry of Education. The business layer contains the Models, Entity
+          Framework ORM, and the NstDbContext. The presentation layer consists
+          of the Controllers, Razor pages, and the files within the wwwroot
+          folder (CSS, JavaScript, etc.). The business layer and the
+          presentation layer are both hosted on the same server within Heritage
+          College. NST also makes use of the Application Management System (AMS)
+          for authentication and authorization which is housed within Heritage
+          College.
         </p>
+        <h3>Project Trade-offs</h3>
         <p>
-          Etiam mollis tortor leo, sed viverra nunc varius sed. Aliquam vitae
-          finibus sem, nec bibendum metus. In eget mauris sit amet sem iaculis
-          cursus. Vestibulum et purus libero. Etiam sit amet dolor dolor. Ut
-          mollis laoreet lorem. Nullam iaculis odio sit amet diam tristique
-          pharetra.
+          During the design phase of NST, we determined what the
+          <a href="./content/docs/NSTTradeOffSliders.pdf" target="_blank"
+            >trade-offs</a
+          >
+          would be in the two major releases. For December, the biggest goal was
+          to get the most features implemented as possible. In order to do this,
+          we decided high quality and low defects would be a lower priority. For
+          May, we placed more importance on having a system that was high
+          quality and low in defects. We decided that for the second release
+          less emphasis should be placed on features.
+        </p>
+      </section>
+      <section>
+        <h2>Analysis Models</h2>
+        <p>
+          Initially a
+          <a href="./content/images/2019ClassDiagram.png" target="_blank"
+            >class diagram</a
+          >
+          was created in October, however, as we used the agile methodology the
+          model had been iterated on many times. The initial class diagram
+          didn’t include the specific interfaces we required to interact with
+          Clara, nor the controllers. We also didn’t realize the need we’d have
+          for view models. As the code developed, we arrived at the final
+          <a href="./content/images/2020ClassDiagram.png" target="_blank"
+            >model.</a
+          >
+        </p>
+      </section>
+      <section>
+        <h2>Ethical Analysis</h2>
+        <p>
+          One legal issue NST encountered was a teammate used an image that was
+          copyrighted without the knowledge that it was copyrighted. As such,
+          the project negatively impacted the creator of the image. After this
+          discovery, the team became a lot more careful and made sure all images
+          were created by the team or the team had rights to use the image.
         </p>
       </section>
     </main>

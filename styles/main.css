@@ -22,6 +22,10 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.italicize {
+  font-style: italic;
+}
+
 .navbar-brand {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -129,6 +133,14 @@ main section:first-of-type {
   margin-top: 1em;
 }
 
+main section p {
+  text-indent: 30px;
+}
+
+main section p:first-of-type {
+  text-indent: 0;
+}
+
 main a {
   color: var(--queenblue);
   text-decoration: underline;
@@ -150,6 +162,28 @@ h1 {
 h2 {
   font-size: 1.3em;
   color: var(--queenblue);
+}
+
+h3 {
+  font-size: 1.1em;
+  text-decoration: underline;
+  color: var(--queenblue);
+}
+
+h4 {
+  font-size: 1em;
+  color: var(--queenblue);
+}
+
+section img {
+  max-width: 100%;
+  margin: auto;
+}
+
+figcaption {
+  font-size: 0.8em;
+  font-style: italicize;
+  color: lightslategray;
 }
 
 p {
@@ -245,6 +279,10 @@ footer a {
 
   h2 {
     margin-top: 35px;
+  }
+
+  section img {
+    max-width: 75%;
   }
 }
 

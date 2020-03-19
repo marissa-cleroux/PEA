@@ -114,17 +114,133 @@
       </div>
     </nav>
 
-    <header><h1>Design</h1></header>
+    <header>
+      <h1>Design <span class="objective">{ Objective 7 }</span></h1>
+    </header>
     <main>
       <section>
+        <h2>Database Design</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra
-          nisl nec dui gravida, sit amet hendrerit sem volutpat. Integer
-          ultricies massa et sem bibendum pharetra. Donec nec risus vel lorem
-          pulvinar commodo ut porta mauris. Suspendisse eu dapibus neque. Donec
-          commodo magna id ipsum eleifend, quis auctor mauris rutrum. Aliquam
-          ultricies non tellus et congue. Nulla ut tincidunt odio.
+          The Nursing Skills Tracker application (NST) uses two databases to
+          hold all relevant data. We created a database that is only used by
+          NST, that holds the associated data. All data concerning students,
+          teachers, and registration is contained within the Clara database. NST
+          references clara via views.
         </p>
+      </section>
+      <section>
+        <h2>Physical Data Model</h2>
+        <p>
+          A physical data model is the design of a database that is intended to
+          be implemented. A physical data model will include the column names,
+          the column types, whether the column is nullable or not. It will also
+          include indication for the primary keys, along with foreign key
+          references. The NST physical data model can be found
+          <a href="content/images/NSTPhysicalModel.JPG" target="_blank"> here</a
+          >.
+        </p>
+      </section>
+      <section>
+        <h2>Database Analysis</h2>
+        <h3>Referential Integrity</h3>
+        <p>
+          Referential integrity is a characteristic of databases where a
+          database administration ensures that a referenced data is correct. It
+          is often used for foreign keys to ensure if one table depends on
+          another table, the records of the referenced independent table cannot
+          be deleted if the dependent table records exist. This ensures the
+          records in the dependent table are always referencing a record.
+        </p>
+        <p>
+          Many tables in NST reference records in Clara, however, NST is
+          referencing Clara via views. NST cannot maintain referential integrity
+          for its records referencing views because views are virtual tables, as
+          such, there is not actually any hard reference. The reference is only
+          implied. Therefor if a record is deleted from Clara that NST depends
+          on, it can cause serious bugs, because there is no way to know if the
+          depended upon records exist before trying to access them. This could
+          cause NST to crash. NST references Clara via views to protect Clara so
+          that no developer can alter Clara's data.
+        </p>
+        <h3>Database Modeling Options</h3>
+        <p>
+          Code first is a modeling option in Entity Framework where the models
+          are first created in the code base and then the database model is
+          generated from those models. Code first is generally better for teams
+          who have a strong developer team, or a team that wishes to only work
+          in the codebase. Model first is a modeling option in Entity Framework
+          where the model diagram is created and then the database model as well
+          as the codebase models are generated from the diagram. NST uses .NET
+          Core, so we could not choose model first. Database first is a modeling
+          option in Entity Framework where the database model is created first
+          and then the codebase models are generated from the database model.
+          Database first is the best option when a team has a strong database
+          team.
+        </p>
+        <p>
+          NST uses code first to generate its models. Code first is advantageous
+          when there is logic in the model classes and when the database can
+          change often. As a team, we decided to use the models for business
+          logic and data access therefor code first is a better option. As well,
+          because we were using the agile methodology, we knew the database was
+          going to be changing often. Using code first added complexity for
+          using views. We had to code the view models as well as right the
+          select statements for the views to access Clara.
+        </p>
+      </section>
+      <section>
+        <h2>Database Access Paths - Primary Tables</h2>
+        <h3>Student Evaluation Table</h3>
+        <p>
+          The student evaluation table stores all student's evaluations for lab
+          and clinical skills. The table has a primary key that is generated
+          when a record is created. It also has foreign keys for the skill
+          table, student view, and skill rating table. The student foreign key
+          is not a true foreign key because it is referencing the Clara view, so
+          it lacks referential integrity. The skill table reference is essential
+          to know which skill is being evaluated. The student view reference is
+          used to know which student created the evaluation. The skill rating
+          table reference allows NST to keep track of the skill rating used.
+        </p>
+        <h3>Teacher Evaluation Table</h3>
+        <p>
+          The teacher evaluation table stores all teacher's evaluations for
+          specific students for lab and clinical skills. The table has a primary
+          key that is generated when a record is created. It also has foreign
+          keys for the skill table, student view, teacher view, and skill rating
+          table. The student and teacher foreign keys are not true foreign keys
+          for the same reason indicated in the student evaluation table. The
+          foreign keys are used for the same reason as indicated in the student
+          evaluation table, with one addition, the teacher foreign key, which
+          enables the system to keep track which teacher evaluated the specific
+          skill for the specific student.
+        </p>
+        <h3>Skill Table</h3>
+        <p>
+          The skill table stores all the skills that students are required to
+          practice in the clinical and lab setting. The skill table has a
+          primary key that is generated when a record is created. The skill
+          table references the course view and the unit table. The reference to
+          the course view allows the system to keep track of which course the
+          student is expected to learn and practice the skill. The unit table
+          reference allows the system to keep track of which unit in the
+          textbook information about the skill can be found.
+        </p>
+      </section>
+      <section>
+        <h2>NST Design Models</h2>
+        <p>
+          NST has three main layers within the system. A presentation layer, a
+          business logic/data access layer, and a database layer. The layers are
+          important for separation of concerns and low coupling. Our business
+          logic layer and data access layer are a single layer as we used entity
+          framework. Separating these two layers when using the framework would
+          add unnecessary complexity.
+        </p>
+      </section>
+      <section>
+        <h2>Data Security Plan</h2>
+        <p>TBD</p>
       </section>
     </main>
     <footer class="text-center">
