@@ -16,7 +16,9 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="navbar-brand" role="banner">
-        <a href="index.html"><img src="content/images/logo.png" alt="logo"/></a>
+        <a href="index.html"
+          ><img src="content/images/logo.png" alt="logo"
+        /></a>
         <div class="banner-text">
           <p class="increase-size">
             Marissa Cleroux
@@ -84,7 +86,7 @@
               <a class="dropdown-item" href="implementation.html"
                 >Implementation</a
               >
-              <a class="dropdown-item active" href="test.html">Test</a>
+              <a class="dropdown-item active" href="test.html">Testing</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -114,99 +116,55 @@
       </div>
     </nav>
 
-    <header><h1>Test</h1></header>
+    <header>
+      <h1>Testing <span class="objective">{ Objective 9 }</span></h1>
+    </header>
     <main>
       <section>
-        <h2>Lorem Ipsum</h2>
+        <h2>Unit Testing</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          volutpat quam sed est tristique pharetra. Sed odio est, porta id
-          lacinia a, tempor quis orci. Aliquam vitae ligula vestibulum, eleifend
-          enim nec, condimentum odio. Quisque id ante blandit, ultricies leo
-          quis, vehicula lorem. Suspendisse molestie, ipsum ac cursus hendrerit,
-          leo odio tempor libero, et pharetra nisi quam ut purus. Quisque turpis
-          quam, viverra nec turpis sed, porttitor scelerisque ex. Cras et turpis
-          vestibulum, lacinia ex non, elementum neque. Nulla facilisi. Ut odio
-          augue, faucibus ut mattis vel, bibendum quis purus. Sed pellentesque
-          elementum massa ac placerat.
+          Unit testing is an integral part of the Nursing Skills Tracker (NST)
+          system. However, it is not often used as NST relies heavily on its
+          database for its functionality. This prevents heavy unit testing as
+          unit testing is meant to test single components, which cannot be used
+          for database queries. For its unit testing framework NST uses xUnit.
+          To mock dependencies NST used Moq. For methods that could be unit
+          tested tests were created. Before checking in code, a developer was
+          required to run the unit tests to ensure they had not broken any
+          tests.
+        </p>
+      </section>
+      <section>
+        <h2>System Testing</h2>
+        <p>
+          Thorough system testing was completed before NST could be considered
+          for production. This was done to ensure that different components of
+          NST worked together as expected and to discover as many bugs as
+          possible. The main categories of system testing completed were
+          functionality, usability, compatibility, business cycles, scalability,
+          performance, and security.
         </p>
         <p>
-          Proin ligula orci, vulputate a finibus varius, volutpat sed sem.
-          Aenean hendrerit felis eu elit fringilla condimentum at tincidunt
-          diam. Praesent volutpat eros dolor, vitae dictum risus facilisis
-          vitae. Quisque ullamcorper, mi vitae dapibus aliquam, leo libero
-          sodales arcu, ut pulvinar ante eros eget velit. Morbi et varius diam.
-          Ut faucibus erat tristique ligula vulputate, non rutrum nibh feugiat.
-          Suspendisse potenti. Nam vitae justo viverra, sollicitudin lacus eget,
-          mattis lectus. Donec eget porttitor ligula. Morbi et varius massa.
-          Duis dictum mattis porttitor.
+          Functionality tests encompass scenarios where different parts of NST
+          have functionality that interact with each other. Usability tests are
+          run to ensure NST is accessible and easy to use by all users of
+          different technical abilities. Compatibility tests cover NST being
+          used in different browsers and on mobile to ensure NST functions as
+          expected in different environments. Business cycle tests were run to
+          ensure the system work as expected in different phases of the business
+          cycle. Scalability tests were run to ensure that NST would function as
+          expected with the maximum number of users and full load of data.
+          Performance tests ensured that NST met the minimum requirements in
+          performance outlined by the Computer Science department. Security
+          tests were run to ensure NST was not vulnerable to common attack
+          vectors.
         </p>
+      </section>
+      <section>
+        <h2>Examples</h2>
         <p>
-          Duis volutpat magna sed tortor eleifend hendrerit. Praesent eros
-          lacus, dapibus id purus in, sagittis tincidunt tortor. Aliquam et
-          ullamcorper nisl. Sed faucibus ut turpis quis porttitor. In pulvinar
-          urna in ullamcorper lobortis. Praesent vitae eros bibendum, dictum
-          nisi sit amet, pretium ante. Maecenas at nibh luctus, mattis ex in,
-          malesuada sapien. Nulla vitae quam eget enim tempor laoreet. Integer
-          nisi nisl, porttitor eget felis eget, feugiat ultricies erat.
-          Phasellus non fringilla velit. Donec ultrices sit amet arcu quis
-          sollicitudin.
-        </p>
-        <p>
-          Curabitur ut vestibulum tellus, vitae congue odio. In condimentum sed
-          purus vel dictum. Ut sodales nisi at orci vestibulum aliquet. Donec
-          lobortis vulputate ex, et ultricies nisi ultricies non. Nulla
-          facilisi. Morbi id mattis nulla. Phasellus nec leo sed metus congue
-          convallis id ullamcorper eros. Phasellus consectetur, massa vehicula
-          blandit luctus, nisl lectus consectetur nunc, sed tempor diam nisi ut
-          orci. Duis fermentum vehicula mauris, at dictum diam pulvinar id.
-          Vestibulum eu dapibus nunc, tempus sodales ligula. Vestibulum ut elit
-          at sem vulputate hendrerit at vitae sapien.
-        </p>
-        <p>
-          Proin auctor enim eget libero venenatis hendrerit. Phasellus vitae
-          auctor urna, ut auctor leo. Quisque eget est at dolor egestas
-          fringilla a ut enim. Nulla facilisi. Nam facilisis varius eros vel
-          interdum. Aenean gravida convallis vestibulum. Morbi quis ex ligula.
-          Integer feugiat at massa sit amet scelerisque. Nullam enim neque,
-          pharetra at elit non, pharetra hendrerit neque. Etiam auctor nisl non
-          sapien luctus, sit amet vulputate libero pretium. Quisque semper ipsum
-          accumsan lorem ultricies, vel varius metus varius. Ut quis nulla quis
-          orci gravida scelerisque. Aliquam in ex blandit, fringilla diam
-          dapibus, tempus augue. Mauris malesuada odio dui, et aliquam diam
-          lobortis id.
-        </p>
-        <p>
-          Integer at nunc tincidunt, sagittis erat eget, bibendum massa. Mauris
-          consectetur, dolor sollicitudin pretium scelerisque, nibh tortor
-          consectetur nisi, nec congue ipsum nibh auctor diam. Aenean sit amet
-          pellentesque neque. Nullam finibus porttitor tristique. Aliquam eget
-          erat ex. Duis sagittis nisl sit amet ante pellentesque, nec porta
-          neque sagittis. Maecenas laoreet pellentesque ullamcorper. Donec
-          elementum diam sed elit viverra, non tristique sapien semper. Morbi
-          aliquam tortor ut diam vehicula rutrum. Ut lobortis augue quis
-          consectetur lobortis. Vestibulum tempor dolor eget augue convallis
-          sollicitudin. Sed nisl quam, pharetra sit amet velit id, volutpat
-          luctus dolor. In posuere dapibus eros. Quisque consectetur vel lectus
-          rutrum tempus.
-        </p>
-        <p>
-          In non elit dolor. Curabitur consectetur ante nunc, vitae gravida
-          dolor condimentum quis. Cras eu libero scelerisque turpis ultricies
-          tincidunt sed et dolor. Nam posuere, ligula eu maximus efficitur, eros
-          ex ullamcorper justo, vitae eleifend eros lectus ac urna. Cras
-          malesuada massa id blandit auctor. Proin massa risus, convallis sit
-          amet bibendum in, sollicitudin fermentum quam. Praesent lobortis
-          mauris vel eleifend tincidunt. Fusce eu nulla eros.
-        </p>
-        <p>
-          Vivamus magna dui, porttitor in accumsan iaculis, sollicitudin
-          lobortis nulla. Nulla porttitor magna ligula. Quisque tempus ut sapien
-          a luctus. Quisque a lectus eleifend, iaculis turpis ac, tristique sem.
-          Suspendisse dictum neque quis erat auctor finibus. Phasellus sem
-          lectus, convallis iaculis varius a, ultrices ac magna. Cras posuere
-          nulla eu odio pellentesque, eu aliquam lacus pharetra. Suspendisse
-          potenti.
+          The system test plan can be found
+          <a href="./content/docs/System_Test_Plan.pdf"> here</a>.
         </p>
       </section>
     </main>
